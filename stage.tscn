@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b53muvlsw1tx3"]
+[gd_scene load_steps=27 format=4 uid="uid://b53muvlsw1tx3"]
 
 [ext_resource type="PackedScene" uid="uid://6uilf6rad880" path="res://coin/coin.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dtbrdmojpvetu" path="res://platform/moving_platform.tscn" id="3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csdn3dwkaprow" path="res://background/parallax_bg.tscn" id="8"]
 [ext_resource type="AudioStream" uid="uid://gunv00cij80t" path="res://audio/music.ogg" id="9"]
 [ext_resource type="Texture2D" uid="uid://dbcdt0wqr3gd3" path="res://tiles_demo.png" id="10_g8oy1"]
+[ext_resource type="PackedScene" uid="uid://vh07snf0owwq" path="res://finish_level/finish_level_button.tscn" id="10_i76fu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i76fu"]
 texture = ExtResource("10_g8oy1")
@@ -502,11 +503,14 @@ size_flags_vertical = 0
 
 [node name="HoldLabel" type="Label" parent="."]
 offset_left = 2249.0
-offset_top = 280.0
+offset_top = 305.0
 offset_right = 2295.0
-offset_bottom = 303.0
+offset_bottom = 328.0
 text = "HOLD"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9")
 autoplay = true
+
+[node name="FinishLevelButton" parent="." instance=ExtResource("10_i76fu")]
+position = Vector2(2250, 340)
