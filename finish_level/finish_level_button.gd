@@ -1,6 +1,8 @@
 extends Node2D
 class_name FinishLevelButton
 
+signal finished
+
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var button_visual: Sprite2D = $Plankpin
 
@@ -15,6 +17,7 @@ func _process(delta: float) -> void:
 	_update_current_hold_time(delta)
 	_update_progress_bar_value()
 	if current_hold_time >= hold_time:
+		finished.emit()
 		_reset_current_hold_time()
 
 

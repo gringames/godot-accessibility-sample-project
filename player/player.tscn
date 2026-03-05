@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbxsp4gp554vh"]
+[gd_scene load_steps=22 format=3 uid="uid://bbxsp4gp554vh"]
 
 [ext_resource type="Script" uid="uid://bcg60egx0fdhy" path="res://player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dh57uloeigwj6" path="res://player/player.webp" id="2_675nc"]
 [ext_resource type="Texture2D" uid="uid://7sv64orewgmb" path="res://player/bullet.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://ckjo4exgg3n7m" path="res://score/score_display.tscn" id="4_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://m3s6ekx1nek" path="res://finish_level/level_complete_ui.tscn" id="5_boad6"]
 [ext_resource type="AudioStream" uid="uid://gw2a4ii0oby2" path="res://audio/sound_shoot.wav" id="8"]
 [ext_resource type="AudioStream" uid="uid://bpyko2i13mj0v" path="res://audio/sound_jump.wav" id="9"]
 
@@ -282,6 +283,10 @@ offset_left = 0.19995117
 offset_top = -0.08000088
 offset_right = -0.2000122
 offset_bottom = -0.15999985
+
+[node name="LevelCompleteUI" parent="UI" instance=ExtResource("5_boad6")]
+offset_top = -84.0
+offset_bottom = -84.0
 
 [node name="SoundShoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8")
