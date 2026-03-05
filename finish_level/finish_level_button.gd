@@ -12,11 +12,23 @@ func _ready() -> void:
 	button_visual.position = Vector2.ZERO
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("hit"):
-		current_hold_time += delta
-	else:
-		current_hold_time = 0
-		return
+	_update_current_hold_time(delta)
+	_update_progress_bar_value()
 	if current_hold_time >= hold_time:
-		print("held enough")
-		current_hold_time = 0 #?
+		_reset_current_hold_time()
+
+
+func _update_current_hold_time(delta: float) -> void:
+	if not Input.is_action_pressed("hit"):
+		_reset_current_hold_time()
+		return
+	current_hold_time += delta
+
+
+func _reset_current_hold_time() -> void:
+	current_hold_time = 0
+
+
+func _update_progress_bar_value() -> void:
+	progress_bar.value = current_hold_time / hold_time
+ 
